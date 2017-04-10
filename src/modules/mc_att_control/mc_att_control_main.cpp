@@ -379,6 +379,7 @@ private:
 	 * Main attitude control task.
 	 */
 	void		task_main();
+
 };
 
 namespace mc_att_control
@@ -1194,7 +1195,11 @@ MulticopterAttitudeControl::task_main()
                     /**
                      * Comment this line below if you don't want attitude control
                      */
+<<<<<<< Updated upstream
                     //control_attitude(dt);
+=======
+                    control_attitude(dt);
+>>>>>>> Stashed changes
 
 
 
@@ -1264,7 +1269,11 @@ MulticopterAttitudeControl::task_main()
                 /**
                  * Comment this line below if you don't want rates control
                  */
+<<<<<<< Updated upstream
                 //control_attitude_rates(dt);
+=======
+                control_attitude_rates(dt);
+>>>>>>> Stashed changes
 
 				/* publish actuator controls */
 				_actuators.control[0] = (PX4_ISFINITE(_att_control(0))) ? _att_control(0) : 0.0f;
@@ -1292,7 +1301,11 @@ MulticopterAttitudeControl::task_main()
                         /**
                          * comment the line below if you don't want this thread publishing actuator commands
                          */
+<<<<<<< Updated upstream
                         //orb_publish(_actuators_id, _actuators_0_pub, &_actuators);
+=======
+                        orb_publish(_actuators_id, _actuators_0_pub, &_actuators);
+>>>>>>> Stashed changes
 						perf_end(_controller_latency_perf);
 
 					} else if (_actuators_id) {

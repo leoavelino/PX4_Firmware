@@ -39,7 +39,9 @@ PARAM_DEFINE_FLOAT(PID_PITCH_P, 1.0f);
  * @increment 0.001
  * @group Pid Attitude Control
  */
-PARAM_DEFINE_FLOAT(PID_YAW_P, 0.01f);
+
+PARAM_DEFINE_FLOAT(PID_YAW_P, 0.1f);
+
 
 /**
  * Roll I gain
