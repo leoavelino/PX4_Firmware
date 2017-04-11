@@ -73,11 +73,9 @@ public:
     int start();
 
 private:
-<<<<<<< Updated upstream
 
-=======
     //int max_loop; //## DEBUG
->>>>>>> Stashed changes
+
     bool _task_should_exit;                                         // if true, task_main() should exit;
     int _control_task;                                              // task handle
 
@@ -205,11 +203,9 @@ namespace pid_att_control
 }
 
 Pid_Att_Control::Pid_Att_Control() :
-<<<<<<< Updated upstream
 
-=======
     //max_loop(0), //## DEBUG
->>>>>>> Stashed changes
+
    _task_should_exit(false),
    _control_task(-1),
    _v_attitude_sp_sub(-1),
@@ -503,10 +499,6 @@ void Pid_Att_Control::control_attitude(float dt)
     _angles_int.pitch = math::constrain(_angles_i.pitch, -_params.max_pitch_i, _params.max_pitch_i);
     _angles_int.yaw = math::constrain(_angles_i.yaw, -_params.max_yaw_i, _params.max_yaw_i);
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     /* update previous error for derivative term*/
     _angles_prev_error.roll = angles_error.roll;
     _angles_prev_error.pitch = angles_error.pitch;
@@ -517,8 +509,7 @@ void Pid_Att_Control::control_attitude(float dt)
     _att_control.pitch = _angles_p.pitch + _angles_int.pitch + _angles_d.pitch;
     _att_control.yaw = _angles_p.yaw + _angles_int.yaw + _angles_d.yaw;
 
-<<<<<<< Updated upstream
-=======
+
 /*  DEBUG
     max_loop++;
     if (max_loop == 100)
@@ -542,8 +533,7 @@ void Pid_Att_Control::control_attitude(float dt)
         max_loop = 0;
     }
 */
->>>>>>> Stashed changes
-}
+
 
 int Pid_Att_Control::start()
 {

@@ -1192,15 +1192,8 @@ MulticopterAttitudeControl::task_main()
 				if (_ts_opt_recovery == nullptr) {
 					// the  tailsitter recovery instance has not been created, thus, the vehicle
                     // is not a tailsitter, do normal attitude control
-                    /**
-                     * Comment this line below if you don't want attitude control
-                     */
-<<<<<<< Updated upstream
-                    //control_attitude(dt);
-=======
-                    control_attitude(dt);
->>>>>>> Stashed changes
 
+                    control_attitude(dt);
 
 
 				} else {
@@ -1266,14 +1259,9 @@ MulticopterAttitudeControl::task_main()
 			}
 
 			if (_v_control_mode.flag_control_rates_enabled) {
-                /**
-                 * Comment this line below if you don't want rates control
-                 */
-<<<<<<< Updated upstream
-                //control_attitude_rates(dt);
-=======
+
                 control_attitude_rates(dt);
->>>>>>> Stashed changes
+
 
 				/* publish actuator controls */
 				_actuators.control[0] = (PX4_ISFINITE(_att_control(0))) ? _att_control(0) : 0.0f;
@@ -1298,14 +1286,9 @@ MulticopterAttitudeControl::task_main()
 
 				if (!_actuators_0_circuit_breaker_enabled) {
 					if (_actuators_0_pub != nullptr) {
-                        /**
-                         * comment the line below if you don't want this thread publishing actuator commands
-                         */
-<<<<<<< Updated upstream
-                        //orb_publish(_actuators_id, _actuators_0_pub, &_actuators);
-=======
+
                         orb_publish(_actuators_id, _actuators_0_pub, &_actuators);
->>>>>>> Stashed changes
+
 						perf_end(_controller_latency_perf);
 
 					} else if (_actuators_id) {
