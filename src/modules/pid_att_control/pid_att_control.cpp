@@ -533,7 +533,7 @@ void Pid_Att_Control::control_attitude(float dt)
         max_loop = 0;
     }
 */
-
+}
 
 int Pid_Att_Control::start()
 {
